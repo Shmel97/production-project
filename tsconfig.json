@@ -8,6 +8,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     //esModuleInterop позволяет работать с пакетами, кот-е используют
     //commonJS как с обычными пакетами с помощью import/export
     "esModuleInterop": true,

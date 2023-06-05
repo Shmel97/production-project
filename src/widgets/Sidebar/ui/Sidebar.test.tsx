@@ -3,15 +3,16 @@ import {
     renderWithTranslation,
 } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 import { Sidebar } from './Sidebar';
+import {componentRender} from "shared/lib/tests/componentRender/componentRender";
 
 describe('Sidebar', () => {
     test('with only first param', () => {
-        renderWithTranslation(<Sidebar />);
+        componentRender(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
     test('test toogle', () => {
-        renderWithTranslation(<Sidebar />);
+        componentRender(<Sidebar />);
         const toggleBtn = screen.getByTestId('sidebar-toggle');
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
         fireEvent.click(toggleBtn);

@@ -2,9 +2,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import cls from './Modal.module.scss';
 import {Portal} from "shared/ui/Portal/Portal";
 import {useTheme} from "app/providers/ThemeProvider";
+import cls from './Modal.module.scss';
 
 interface ModalProps {
     className?: string;
@@ -61,12 +61,11 @@ export const Modal = (props: ModalProps) => {
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-        [cls[theme]]: true,
     };
 
     return (
        <Portal>
-           <div className={classNames(cls.Modal, mods, [className])}>
+           <div className={classNames(cls.Modal, mods, [className, theme])}>
                <div className={cls.overlay} onClick={closeHandler}>
                    <div className={cls.content} onClick={onContentClick}>
                        {children}

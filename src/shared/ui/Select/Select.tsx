@@ -1,6 +1,6 @@
-import {classNames, Mods} from "shared/lib/classNames/classNames";
-import cls from './Select.module.scss'
-import {ChangeEvent, memo, useMemo} from "react";
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { ChangeEvent, memo, useMemo } from 'react';
+import cls from './Select.module.scss';
 
 export interface SelectOption {
     value: string;
@@ -23,24 +23,24 @@ export const Select = memo((props: SelectProps) => {
         options,
         value,
         readonly,
-        onChange
+        onChange,
     } = props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value)
-    }
+        onChange?.(e.target.value);
+    };
 
-    const optionList = useMemo(() => {
-        return options?.map(opt => (
-            <option
-                className={cls.option}
-                value={opt.value}
-                key={opt.value}
-            >{opt.content}</option>
-        ))
-    }, [options])
+    const optionList = useMemo(() => options?.map((opt) => (
+        <option
+            className={cls.option}
+            value={opt.value}
+            key={opt.value}
+        >
+            {opt.content}
+        </option>
+    )), [options]);
 
-    const mods: Mods = {}
+    const mods: Mods = {};
     return (
         <div className={classNames(cls.Wrapper, mods, [className])}>
             {label && (
@@ -59,4 +59,3 @@ export const Select = memo((props: SelectProps) => {
         </div>
     );
 });
-

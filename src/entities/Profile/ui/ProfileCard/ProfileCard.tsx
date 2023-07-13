@@ -1,15 +1,15 @@
-import {classNames, Mods} from 'shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
-import {Text, TextAlign, TextTheme} from 'shared/ui/Text/Text';
-import {Input} from 'shared/ui/Input/Input';
-import {Loader} from 'shared/ui/Loader/Loader';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Input } from 'shared/ui/Input/Input';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Currency } from 'entities/Currency/model/types/currency';
+import { CurrencySelect } from 'entities/Currency';
+import { Country } from 'entities/Country/model/types/country';
+import { CountrySelect } from 'entities/Country';
+import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
-import {Profile} from '../../model/types/profile';
-import {Avatar} from "shared/ui/Avatar/Avatar";
-import {Currency} from "entities/Currency/model/types/currency";
-import {CurrencySelect} from "entities/Currency";
-import {Country} from "entities/Country/model/types/country";
-import {CountrySelect} from "entities/Country";
 
 interface ProfileCardProps {
     className?: string;
@@ -43,12 +43,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCurrency,
         onChangeCountry,
     } = props;
-    const {t} = useTranslation('profile');
+    const { t } = useTranslation('profile');
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {[cls.loading]: true}, [className])}>
-                <Loader/>
+            <div className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+                <Loader />
             </div>
         );
     }
@@ -68,14 +68,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     const mods: Mods = {
         [cls.editing]: !readonly,
-    }
+    };
 
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
             <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls.avatarWrapper}>
-                        <Avatar src={data?.avatar}/>
+                        <Avatar src={data?.avatar} />
                     </div>
                 )}
                 <Input

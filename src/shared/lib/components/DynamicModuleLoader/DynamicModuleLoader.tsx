@@ -25,10 +25,10 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
         const mountedReducers = store.reducerManager.getMountedReducers();
         Object.entries(reducers).forEach(([name, reducer]) => {
             const mounted = mountedReducers[name as StateSchemaKey];
-            //Добавляем новый редьюсер только если его нету
+            // Добавляем новый редьюсер только если его нету
             if (!mounted) {
                 store.reducerManager.add(name as StateSchemaKey, reducer);
-                dispatch({type: `@INIT ${name} reducer`})
+                dispatch({ type: `@INIT ${name} reducer` });
             }
         });
 

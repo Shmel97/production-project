@@ -1,12 +1,12 @@
-import {classNames} from "shared/lib/classNames/classNames";
-import cls from './ArticleViewSelector.module.scss'
-import {useTranslation} from 'react-i18next';
-import {memo} from 'react'
-import { ArticleView } from "../../model/types/article";
-import ListIcon from 'shared/assets/icons/bi_list.svg'
-import TiledIcon from 'shared/assets/icons/fe_tiled.svg'
-import {Icon} from "shared/ui/Icon/Icon";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
+import ListIcon from 'shared/assets/icons/bi_list.svg';
+import TiledIcon from 'shared/assets/icons/fe_tiled.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import cls from './ArticleViewSelector.module.scss';
+import { ArticleView } from '../../model/types/article';
 
 interface ArticleViewSelectorProps {
     className?: string;
@@ -23,30 +23,30 @@ const viewTypes = [
         view: ArticleView.BIG,
         icon: ListIcon,
     },
-]
+];
 
-export const ArticleViewSelector = memo(({className, view, onViewClick}: ArticleViewSelectorProps) => {
-    const {t} = useTranslation();
+export const ArticleViewSelector = memo(({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+    const { t } = useTranslation();
 
     const onClick = (newView: ArticleView) => () => {
-        onViewClick?.(newView)
-        console.log('click svg articles')
-    }
+        onViewClick?.(newView);
+        console.log('click svg articles');
+    };
 
     return (
         <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-            {viewTypes.map(viewType => (
+            {viewTypes.map((viewType) => (
                 <Button
                     key={viewType.view}
                     theme={ButtonTheme.CLEAR}
                     onClick={onClick(viewType.view)}
                 >
-                    <Icon Svg={viewType.icon}
-                          className={classNames('', {[cls.notSelected]: viewType.view !== view})}
+                    <Icon
+                        Svg={viewType.icon}
+                        className={classNames('', { [cls.notSelected]: viewType.view !== view })}
                     />
                 </Button>
             ))}
         </div>
     );
 });
-

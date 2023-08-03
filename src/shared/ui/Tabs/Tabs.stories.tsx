@@ -1,14 +1,14 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {Tabs} from './Tabs';
-import {action} from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
+import { Tabs } from './Tabs';
 
 export default {
     title: 'shared/Tabs',
     component: Tabs,
     argTypes: {
-        backgroundColor: {control: 'color'},
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof Tabs>;
 
@@ -31,5 +31,5 @@ Normal.args = {
         },
     ],
     value: 'tab 2',
-    onTabClick: action('onTabClick')
+    onTabClick: action('onTabClick'),
 };

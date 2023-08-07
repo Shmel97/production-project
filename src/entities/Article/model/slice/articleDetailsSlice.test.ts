@@ -3,8 +3,8 @@ import {
 } from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 import { articleDetailsActions, articleDetailsReducer } from './articleDetailsSlice';
 
 const data = {

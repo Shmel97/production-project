@@ -1,9 +1,9 @@
-import {Fragment, ReactNode, useState} from 'react'
-import { Listbox as HListBox } from '@headlessui/react'
+import {Fragment, ReactNode} from 'react'
+import {Listbox as HListBox} from '@headlessui/react'
 import cls from './ListBox.module.scss';
-import {classNames, Mods} from "shared/lib/classNames/classNames";
-import {Button} from "shared/ui/Button/Button";
-import {HStack} from "shared/ui/Stack";
+import {classNames} from "shared/lib/classNames/classNames";
+import {Button} from "../Button/Button";
+import {HStack} from "../Stack";
 
 export interface ListBoxItem {
     value: string;

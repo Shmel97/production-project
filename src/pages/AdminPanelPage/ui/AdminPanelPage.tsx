@@ -2,13 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import {Page} from "widgets/Page/Page";
 
-const AboutPage = () => {
+const AdminPanelPage = () => {
     const { t } = useTranslation('about');
     return (
         <Page>
-            {t('О сайте')}
+            {t('AdminPanelPage')}
         </Page>
     );
 };
 
-export default AboutPage;
+export default AdminPanelPage;

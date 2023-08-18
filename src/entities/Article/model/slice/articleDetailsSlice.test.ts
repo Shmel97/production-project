@@ -1,11 +1,6 @@
-import {
-    profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
-} from 'entities/Profile';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
-import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { articleDetailsActions, articleDetailsReducer } from './articleDetailsSlice';
+import {ArticleDetailsSchema} from '../types/articleDetailsSchema';
+import {fetchArticleById} from '../services/fetchArticleById/fetchArticleById';
+import {articleDetailsReducer} from './articleDetailsSlice';
 
 const data = {
     id: '1',
